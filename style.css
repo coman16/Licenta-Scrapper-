@@ -1,0 +1,32 @@
+table {
+    width: 100%;
+}
+th {
+    background: #f1f1f1;
+    font-weight: bold;
+    padding: 6px;
+}
+td {
+    background: #f9f9f9;
+    padding: 6px;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.col-sm-7{
+  margin-top: 20px;
+}
+
+img {
+  margin-top: 10px;
+}
+
+h5 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}

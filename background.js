@@ -1,11 +1,17 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+// background.js
+var title;
+// Called when the user clicks on the browser action.
+// This block is new!
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log("request",request);
+    if( request.message === "open_new_tab" ){
+       title = request.title;
+      // console.log(request.title);
 
-'use strict';
-
-chrome.runtime.onInstalled.addListener(function() {
-  chrome.storage.sync.set({color: '#3aa757'}, function() {
-    console.log("The color is green.");
-  });
-});
+    }
+    else if(request.message ==="get_title"){
+      chrome.runtime.sendMessage({"message": "title_value", "url_value": title});
+    }
+  }
+);
